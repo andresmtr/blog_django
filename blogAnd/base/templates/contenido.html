@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block titulo %} {{post.titulo|upper}} | Blog - Andrés Triana {% endblock titulo %}
+        
+        
+        {% block cuerpo %}
+
+        <!-- Noticia principal -->
+        <section>
+            <div class="primera">
+
+                <div class="imagen_primera" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(229,229,157, 0.5)), url({{post.imagen_referencial.url}})">
+
+                    <div class="">
+
+                        <!-- Boton categoria -->
+                        <!-- <div class="categoria_principal btn btn-success">
+                            <a class="boton_letra" href=""><span>{{ post.categoria | upper }}</span></a>
+                        </div> -->
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <h2 class="h2_titulo_principal" >{{post.titulo}}</h2></a>
+                            <p></p>
+                            
+                        </div>
+
+                        <!-- Autor -->
+                        <div class="autor_principal">
+                            <p>Autor: {{ post.autor }}</p>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="fecha_principal">
+                            <p>Fecha: {{ post.fecha_publicacion }}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cuerpo noticia -->
+        <section>
+            <div class="container">
+
+                <div class="post-content-body">
+                    {{ post.contenido | safe }}
+                </div>
+
+                <div>
+                    <div class="">
+                        <div class="">
+                          <p>Escrito por: </p>
+                          <br>
+                          <img src="{{ post.autor.imagen_referencial.url }}" alt="Image Placeholder" class="" height=50px width=50px>
+                          <br>
+                          <div class="">
+                            <br>
+                            
+                            <p>{{ post.autor }}</p>
+                            <!-- <p class="">
+                              <a href="{{ post.autor.facebok }}" class=""><span class="fa fa-facebook"></span></a>
+                              <a href="{{ post.autor.twitter }}" class=""><span class="fa fa-twitter"></span></a>
+                              <a href="{{ post.autor.instagram }}" class=""><span class="fa fa-instagram"></span></a>
+                            </p> -->
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        {% endblock cuerpo %}
+

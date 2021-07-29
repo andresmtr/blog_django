@@ -1,0 +1,319 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} Blog - Andrés Triana {% endblock titulo %}</title>
+    
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static "base/css/style.css" %}"/>
+    <link rel="stylesheet" href="{% static "base/css/nav.css" %}"/>
+
+    <!-- BOOTSTRAP -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+    <!-- Material Design icons web -->
+    <link rel="stylesheet" href="{% static "base/fonts/icomoon/style.css" %}"/>
+    <!-- <link rel="stylesheet" href="static/fonts/icomoon/style.css"> -->
+    
+
+
+</head>
+<body>
+
+
+        <!-- NAV -->
+        <section>
+            <header class="header">
+                <nav class="navbar">
+                    <a href="{% url 'base:index' %}" class="nombre-logo">Blog Andrés Triana</a>
+                    
+                    <!-- Icons -->
+                    <!-- <span class="icon-facebook"></span> -->
+                    <a href="{{ sociales.facebook }}" class="color-icon" target="_blank"><span class="icon-facebook"></span></a>
+                    <a href="{{ sociales.twitter }}" class="color-icon" target="_blank"><span class="icon-twitter"></span></a>
+                    <a href="{{ sociales.instagram }}" class="color-icon" target="_blank"><span class="icon-instagram"></span></a>
+                    <a href="{{ sociales.github }}" class="color-icon" target="_blank"><span class="icon-github"></span></a>
+                    <a href="{{ sociales.linkedin }}" class="color-icon" target="_blank"><span class="icon-linkedin"></span></a>
+
+
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="{% url 'base:index' %}" class="nav-link">Inicio</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a href="" class="nav-link">Categorias</a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a href="{% url 'base:formulario_contacto' %}" class="nav-link">Contacto</a>
+                        </li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </header>  
+        </section>
+        <!-- END NAV -->
+
+
+        {% block cuerpo %}
+
+        <!-- Noticia principal -->
+        <section>
+            <div class="primera">
+
+                <div class="imagen_primera" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(231, 231, 213, 0.5)), url({{principal.imagen_referencial.url}})">
+
+                    <div class="">
+
+                        <!-- Boton categoria -->
+                        <div class="categoria_principal btn btn-success">
+                            <a class="boton_letra" href="{{ principal.categoria }}"><span>{{principal.categoria | upper }}</span></a>
+                            
+                        </div>
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <a href="{% url 'base:detalle_post' principal.slug %}"><h2 class="letra_noticia" >{{principal.titulo}}</h2></a>
+                            
+                        </div>
+
+                        <!-- Autor -->
+                        <div class="autor_principal">
+                            <p>Autor: {{principal.autor}}</p>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="fecha_principal">
+                            <p>Fecha: {{principal.fecha_publicacion}}</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otras noticias -->
+        <section>
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-10 col-sm-5 col-md-5 imagen_noticia imagen_noticia_1" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(247, 247, 217, 0.5)), url({{ post1.imagen_referencial.url }})">
+                        <!-- Boton categoria -->
+                        <div class="categoria_principal btn btn-success">
+                            <a class="boton_letra" href="{{ post1.categoria }}"><span>{{post1.categoria | upper}}</span></a>
+                        </div>
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <a href="{% url 'base:detalle_post' post1.slug %}"><h2 class="h2_titulo_principal" >{{post1.titulo}}</h2></a>
+                        </div>
+
+                        <!-- Autor -->
+                        <!-- Autor -->
+                        <div class="autor_principal">
+                            <p>Autor: {{post1.autor}}</p>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="fecha_principal">
+                            <p>Fecha: {{post1.fecha_publicacion}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-5 col-md-5 imagen_noticia imagen_noticia_1" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(190, 190, 190, 0.5)), url({{ post2.imagen_referencial.url }})">
+
+                        <!-- Boton categoria -->
+                        <div class="categoria_principal btn btn-success">
+                            <a class="boton_letra" href="{{ post2.categoria }}"><span>{{post2.categoria | upper}}</span></a>
+                        </div>
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <a href="{% url 'base:detalle_post' post2.slug %}"><h2 class="h2_titulo_principal" >{{post2.titulo}}</h2></a>
+                        </div>
+
+                        <!-- Autor -->
+                        <div class="autor_principal">
+                            <p>Autor: {{post2.autor}}</p>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="fecha_principal">
+                            <p>Fecha: {{post2.fecha_publicacion}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-5 col-md-5 imagen_noticia imagen_noticia_1" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(190, 190, 190, 0.5)), url({{ post3.imagen_referencial.url }})">
+                        <!-- Boton categoria -->
+                        <div class="categoria_principal btn btn-success">
+                            <a class="boton_letra" href="{{ post3.categoria }}"><span>{{post3.categoria | upper}}</span></a>
+                        </div>
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <a href="{% url 'base:detalle_post' post3.slug %}"><h2 class="h2_titulo_principal" >{{post3.titulo}}</h2></a>
+                        </div>
+
+                        <!-- Autor -->
+                        <div class="autor_principal">
+                            <p>Autor: {{post3.autor}}</p>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="fecha_principal">
+                            <p>Fecha: {{post3.fecha_publicacion}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-10 col-sm-5 col-md-5 imagen_noticia imagen_noticia_1" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(247, 247, 217, 0.5)), url({{ post4.imagen_referencial.url }})">
+                        <!-- Boton categoria -->
+                        <div class="categoria_principal btn btn-success">
+                            <a class="boton_letra" href="{{ post4.categoria }}"><span>{{post4.categoria | upper}}</span></a>
+                        </div>
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <a href="{% url 'base:detalle_post' post4.slug %}"><h2 class="h2_titulo_principal" >{{post4.titulo}}</h2></a>
+                        </div>
+
+                        <!-- Autor -->
+                        <div class="autor_principal">
+                            <p>Autor: {{post4.autor}}</p>
+                        </div>
+
+                        <!-- Fecha -->
+                        <div class="fecha_principal">
+                            <p>Fecha: {{post4.fecha_publicacion}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock cuerpo %}
+
+
+        <!-- Categorias -->
+
+        <section>
+
+            <div class="container">
+
+                <div >
+                    <h2 class="titulo_categoria">Categorias</h2>
+                </div>
+    
+                <div class="container grid_categoria">
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Ordenadores' %}"><span>Ordenadores</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Videojuegos' %}"><span>Videojuegos</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Programación' %}"><span>Programación</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Apple' %}"><span>Apple</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Google' %}"><span>Google</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Microsoft' %}"><span>Microsoft</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Tutoriales' %}"><span>Tutoriales</span></a>
+                    </div>
+                    <div class="boton_categoria btn btn-success">
+                        <a class="boton_letra" href="{% url 'base:Tecnología' %}"><span>Tecnologia</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer -->
+
+        <section>
+            <div class="footer">
+                <div class="row">
+                    <div class="col-10 col-sm-3 col-md-3 footer_sector">
+                        <h3 class="footer_title">
+                            Acerca
+                        </h3>
+                        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iusto, sapiente accusantium dignissimos quibusdam, nihil laborum iste minima doloribus assumenda adipisci repellendus eveniet nulla facilis saepe tempore, totam obcaecati animi.</p> -->
+                        <!-- <p>{{ autor.descripcion }}</p> -->
+                        <div class="container">
+                            <p>Ingeniero de sistemas, amante del rock, los video juegos y python</p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-10 col-sm-3 col-md-3 footer_sector">
+                        <h3 class="footer_title">
+                            Menú rápido
+                        </h3>
+                        <ul>
+                            <li class="">
+                                <a href="{% url 'base:index' %}" class="nav-link">Inicio</a>
+                            </li>
+                            <!-- <li class="">
+                                <a href="acerca.html" class="nav-link">Categorias</a>
+                            </li> -->
+                            <li class="">
+                                <a href="{% url 'base:formulario_contacto' %}" class="nav-link">Contacto</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="col-10 col-sm-3 col-md-3 footer_sector">
+                        <h3 class="footer_title">
+                            Contacto
+                        </h3>
+                        <div class = "grid_tool">
+                            <a href="{{ sociales.facebook }}" class="color-icon" target="_blank"><span class="icon-facebook"></span></a>
+                            <a href="{{ sociales.twitter }}" class="color-icon" target="_blank"><span class="icon-twitter"></span></a>
+                            <a href="{{ sociales.instagram }}" class="color-icon" target="_blank"><span class="icon-instagram"></span></a>
+                            <a href="{{ sociales.github }}" class="color-icon" target="_blank"><span class="icon-github"></span></a>
+                            <a href="{{ sociales.linkedin }}" class="color-icon" target="_blank"><span class="icon-linkedin"></span></a>
+                            <a href="mailto:andrestrianareina@outlook.com" class="color-icon"><span class="icon-mail_outline"></span></a>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <p class="pDesing">Copyright © 2021 All rights reserved | Design by Andrés Triana - 2021</p>
+                </div>
+
+                
+
+            </div>
+
+        </section>
+
+    
+
+        <!-- Javascripts -->
+
+    
+        <script src="{% static "base/js/nav.js" %}"></script>
+        <!-- <script src="static/js/nav.js"></script> -->
+
+</body>
+</html>
+

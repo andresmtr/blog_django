@@ -1,0 +1,89 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block titulo %} {{ categoria |upper }} | Blog - Andrés Triana {% endblock titulo %}
+
+        {% block cuerpo %}
+
+        <!-- Titulo -->
+        <section>
+            <div class="titulo_cat">
+
+                <div class="imagen_cat" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(231, 231, 213, 0.5)), url({{ categoria.imagen_referencial.url }})">
+
+                    <div class="">
+
+                        <!-- Boton categoria -->
+                        <!-- <div class="categoria_principal btn btn-success">
+                            <span>{{ categoria | upper }}</span>
+                        </div> -->
+    
+                        <!-- Titulo noticia -->
+                        <div class="titulo_principal">
+                            <h2>{{ categoria | upper }}</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Noticias -->
+
+        <section>
+            {% for post in posts %}
+            <div>
+                <div class="col-10 col-sm-5 col-md-5 imagen_noticia imagen_noticia_1" style="background-image: linear-gradient(rgba(255,255,255, 0.5),rgba(247, 247, 233, 0.5)), url({{ post.imagen_referencial.url }})">
+                    <!-- Boton categoria -->
+                    <!-- <div class="categoria_principal btn btn-success">
+                        <span>{{ post.categoria | upper }}</span>
+                    </div> -->
+
+                    <!-- Titulo noticia -->
+                    <div class="titulo_principal">
+                        <a href="{% url 'base:detalle_post' post.slug %}"><h2 class="h2_titulo_principal" >{{post.titulo}}</h2></a>
+                        <!-- <h2 class="h2_titulo_principal" >{{ post.titulo }}</h2> -->
+                    </div>
+
+                    <!-- Autor -->
+                    <div class="autor_principal">
+                        <p>Autor: {{ post.autor }}</p>
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="fecha_principal">
+                        <p>Fecha: {{ post.fecha_publicacion }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+
+
+
+
+        <!-- Paginnator -->
+        <section>
+            <div class="row text-center pt-5 border-top">
+                <div class="col-md-12">
+                  <div class="custom-pagination">
+                    Página {{ posts.number }} de {{ posts.paginator.num_pages }}
+                    {% if posts.has_previous %}
+                    <li>
+                      <a href="?page={{ posts.previous_page_number }}">{{ posts.previous_page_number }}</a>
+                    </li>
+                    {% endif %}
+                    {% if posts.has_next %}
+                    <li>
+                      <a href="?page={{ posts.next_page_number }}">{{ posts.next_page_number }}</a>
+                    </li>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+        </section>
+
+
+
+
+        {% endblock cuerpo %}
+

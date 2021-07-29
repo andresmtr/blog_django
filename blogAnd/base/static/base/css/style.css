@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Primera noticia */
+
+.primera{
+    
+    width:95%;
+    height:95%;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    /* background-position: 2cm bottom; */
+}
+
+.imagen_primera{
+
+
+    /* height: 25vh; */
+    /* height:95%; */
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+
+.letra_noticia{
+    color: black;
+    text-decoration: none;
+}
+
+/* Parte buton categoria */
+
+.categoria_principal{
+
+    margin: 10px auto;
+    padding: 50px .5em;
+
+}
+
+/* Titulo principal */
+
+.titulo_principal{
+    margin: 10px auto;
+    padding: 50px .5em;
+}
+
+.h2_titulo_principal{
+    font-size: 150%;
+    text-decoration: none;
+    color: black;
+}
+
+.autor_principal{
+    padding: 10px .5em;
+    text-align: left;
+}
+
+.fecha_principal{
+    padding: 10px .5em;
+    text-align: left;
+}
+
+/* Icons colors */
+.color-icon{
+    color:#272727;
+}
+
+.nombre-logo{
+    color:#272727;
+}
+
+/* contenido noticias */
+
+.imagen_noticia{
+    
+    width:95%;
+    height:95%;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: left;
+    background-color: #1a46df;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    /* background-position: 2cm bottom; */
+}
+
+.imagen_noticia_1{
+
+
+    height:510px;
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+
+/* Categorias botones */
+
+.titulo_categoria{
+    padding: 20px .5em;
+}
+
+.boton_categoria{
+    font-size:2em;
+    padding: 20px .5em;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.boton_letra{
+    color:white;
+    text-decoration: none;
+}
+
+.grid_categoria{
+    text-align: center;
+    padding: 20px .5em;
+    /* display: grid; */
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 100px;
+    grid-gap: 20px; */
+  }
+
+/* Categoria pagina */
+
+.titulo_cat{
+    
+    width:95%;
+    height:95%;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #1a46df;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    /* background-position: 2cm bottom; */
+}
+
+.imagen_cat{
+
+
+    height:500px;
+    background-repeat: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-radius: 10px;
+    
+}
+
+
+
+/* Footer */
+
+.footer{
+    background-color: rgb(229, 229, 157);
+}
+
+.footer_sector{
+    width:95%;
+    height:95%;
+    margin: 10px auto;
+}
+.footer_title{
+    padding: 20px .5em;
+}
+
+.grid_tool{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+    grid-gap: 20px;
+  }
+
+.pDesing{
+    text-align: center;
+    padding: 20px .5em;
+    
+
+}
